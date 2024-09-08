@@ -1,0 +1,29 @@
+$button-bg-color: #001529;
+$button-active-bg-color: #007BFF;
+$button-text-color: #fff;
+$button-border-radius: 10px;
+$button-padding: 10px;
+$gap: 15px;
+
+.tabButtonsWrapper {
+  display: flex;
+  gap: $gap;
+
+  button {
+    background-color: $button-bg-color;
+    color: $button-text-color;
+    border-radius: $button-border-radius;
+    padding: $button-padding;
+    cursor: pointer;
+    border: none;
+
+    &:hover {
+      background-color: darken($button-bg-color, 10%);
+    }
+  }
+
+  .activeButton {
+    background-color: $button-active-bg-color;
+    color: $button-text-color;
+  }
+}

@@ -1,0 +1,65 @@
+$header-background: #001529;
+$header-padding: 30px 50px;
+$list-gap: 50px;
+$item-gap: 20px;
+$icon-size: 20px;
+
+.headerWrapper {
+  background-color: $header-background;
+  padding: $header-padding;
+  width: 100%;
+  color: #fff;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .priceInfo{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .popularCoinsList {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $list-gap;
+
+    .listItem {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: $item-gap;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      img {
+        width: $icon-size;
+      }
+    }
+
+    @media screen and (max-width: 768px)
+    {
+      flex-direction: column;
+      gap: 5px;
+      justify-content: start;
+      align-items: start;
+    }
+  }
+
+  & .priceInfo{
+    div{
+      cursor: pointer;
+    }
+  }
+  @media screen and (max-width: 768px)
+  {
+    padding: 20px;
+    font-size: 13px;
+  }
+}

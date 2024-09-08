@@ -1,0 +1,12 @@
+$border-color: #ccc;
+
+.formWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $border-color;
+
+  & div {
+    border: none;
+  }
+}

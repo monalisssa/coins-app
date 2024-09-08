@@ -1,0 +1,38 @@
+$border-color: #ccc;
+$padding: 10px;
+$font-size: 16px;
+$icon-width-large: 50px;
+$icon-width-small: 40px;
+$gap-small: 10px;
+$gap-large: 20px;
+
+.cardWrapper {
+  border-bottom: 1px solid $border-color;
+  padding: $padding;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 80%;
+
+  .cardInfo {
+    display: flex;
+    gap: $gap-small;
+    font-size: $font-size;
+    align-items: center;
+
+    img {
+      width: $icon-width-large;
+    }
+  }
+
+  .cardPrice {
+    display: flex;
+    gap: $gap-large;
+    align-items: center;
+    font-weight: bold;
+
+    img {
+      width: $icon-width-small;
+    }
+  }
+}
