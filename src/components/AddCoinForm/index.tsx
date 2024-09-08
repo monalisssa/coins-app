@@ -6,7 +6,7 @@ import * as styles from './style.module.scss';
 import { localStorageManager } from '../../utils/LocalStorageManager';
 import { useAddedCoins } from '../../context/AddedCoinsContext';
 import { IFormProps } from '../../types/name';
-import { validateInput } from '../../helpers/validateValue';
+import { validateInput } from '../../helpers/validateInput';
 
 const AddCoinForm: React.FC<IFormProps> = ({ coin, isModalOpen, handleModalClose }) => {
   const [count, setCount] = useState<number>(1);
