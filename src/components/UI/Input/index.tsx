@@ -9,7 +9,7 @@ const Input: React.FC<InputProps> = ({ label, ...props }) => {
   return (
     <>
       {label && label}
-      <input className={styles.inputContainer} {...props} />;
+      <input className={styles.inputContainer} {...props} />
     </>
   );
 };

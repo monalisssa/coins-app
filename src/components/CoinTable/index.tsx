@@ -35,8 +35,8 @@ const CoinTable: React.FC<ICoinTableProps> = ({ searchCoins, error: searchError,
   }, [searchCoins]);
 
   const dataSource = useMemo(() => {
-    const source = (searchCoins?.length ?? 0) > 0 ? searchCoins : coins;
-    return filterData(source);
+    if (searchCoins && searchCoins.length > 0) return filterData(searchCoins);
+    else return filterData(coins);
   }, [searchCoins, coins]);
 
   return (

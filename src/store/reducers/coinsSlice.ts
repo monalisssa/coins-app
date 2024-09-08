@@ -1,9 +1,14 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { FETCH_COINS_ENDPOINT, FETCH_ICONS_ENDPOINT } from '../../constants/apiEndpoints';
+import { API_KEY, FETCH_COINS_ENDPOINT, FETCH_ICONS_ENDPOINT } from '../../constants/apiEndpoints';
 import { ICoin } from '../../types/name';
 export const coinsApi = createApi({
   reducerPath: 'coinsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: FETCH_COINS_ENDPOINT }),
+  baseQuery: fetchBaseQuery({ baseUrl: FETCH_COINS_ENDPOINT,
+    prepareHeaders: (headers) => {
+      headers.set('Authorization', `Bearer ${API_KEY}`);
+      return headers;
+    },
+  }),
   endpoints: (builder) => ({
     getCoins: builder.query<ICoin[], { offset: number }>({
       query: ({ offset }) => `?offset=${offset}&limit=20`,

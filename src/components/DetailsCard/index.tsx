@@ -1,7 +1,7 @@
 import React from 'react';
 import * as styles from './style.module.scss';
 import Button from '../UI/Button';
-import add_icon from '../../assets/images/add.png';
+import add_icon from '../../assets/images/add.svg';
 import AddCoinForm from '../AddCoinForm';
 import useModal from '../../hooks/useModal';
 import { formatNumber } from '../../helpers/formatPrice';
