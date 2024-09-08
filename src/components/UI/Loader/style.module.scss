@@ -1,0 +1,22 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+$loader-size: 50px;
+$border-color: #ccc;
+$border-width: 3px;
+
+.loader {
+  width: $loader-size;
+  height: $loader-size;
+  margin: auto;
+  border: $border-width solid $border-color;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: rotation 1s linear infinite;
+}

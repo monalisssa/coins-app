@@ -1,0 +1,27 @@
+$input-padding: 10px;
+$input-border-color: #ccc;
+$input-focus-border-color: #007bff;
+$input-background-color: #fff;
+$input-font-size: 16px;
+
+.inputContainer {
+  width: 100%;
+  max-width: 400px;
+  padding: $input-padding;
+  border: 1px solid $input-border-color;
+  border-radius: 4px;
+  font-size: $input-font-size;
+  background-color: $input-background-color;
+  transition: border-color 0.3s, box-shadow 0.3s;
+
+  &:focus {
+    border-color: $input-focus-border-color;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+
+  &::placeholder {
+    color: #aaa;
+    opacity: 1;
+  }
+}
