@@ -6,6 +6,7 @@ import * as styles from './style.module.scss';
 import { localStorageManager } from '../../utils/LocalStorageManager';
 import { useAddedCoins } from '../../context/AddedCoinsContext';
 import { IFormProps } from '../../types/name';
+import { validateInput } from '../../helpers/validateValue';
 
 const AddCoinForm: React.FC<IFormProps> = ({ coin, isModalOpen, handleModalClose }) => {
   const [count, setCount] = useState<number>(1);
@@ -13,7 +14,10 @@ const AddCoinForm: React.FC<IFormProps> = ({ coin, isModalOpen, handleModalClose
   const { updateData } = useAddedCoins()!;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setCount(Number(event.target.value));
+    const validatedValue = validateInput(event.target.value);
+    if (validatedValue !== null) {
+      setCount(validatedValue);
+    }
   };
 
   useEffect(() => {
