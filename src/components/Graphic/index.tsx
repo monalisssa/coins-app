@@ -22,10 +22,22 @@ const Graphic = ({ coin }: { coin: ICoin }) => {
     priceUsd: parseFloat(item.priceUsd).toFixed(2) + '$',
   }));
 
+  const filteredData = formattedData?.filter((_, index) => index % 10 === 0);
+
   const config = {
-    data: formattedData,
+    data: filteredData,
     xField: 'time',
     yField: 'priceUsd',
+    smooth: true,
+    animations: {
+      appear: {
+        animation: 'zoom-in',
+        duration: 500,
+      },
+    },
+    lineStyle: {
+      lineWidth: 3,
+    },
   };
 
   return (

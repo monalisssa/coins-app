@@ -29,7 +29,7 @@ const Header = () => {
           ))}
         </ul>
         <div className={styles.priceInfo}>
-          {totalPrice}
+          <p>{totalPrice}</p>
           <img src={image_bag} alt="bag" onClick={handleOpenModal} />
         </div>
       </header>
