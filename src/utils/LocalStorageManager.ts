@@ -19,7 +19,7 @@ class LocalStorageManager {
       storedItem.id === item.id
         ? {
             ...storedItem,
-            priceUsd: String(storedItem.priceUsd + item.priceUsd),
+            priceUsd: String(Number(storedItem.priceUsd) + Number(item.priceUsd)),
             count: Number(storedItem.count) + Number(item.count),
           } // Обновляем стоимость
         : storedItem,
