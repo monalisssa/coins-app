@@ -7,7 +7,7 @@ import { useSearchCoinsQuery } from '../store/reducers/coinsSlice';
 const Home = () => {
   const [searchCoinId, setSearchCoinId] = useState<string | null>(null);
   const {
-    data: coins,
+    data: searchCoins,
     error: searchError,
     isFetching: isSearchFetching,
   } = useSearchCoinsQuery(searchCoinId || '', {
@@ -24,7 +24,7 @@ const Home = () => {
       <div className="wrapper">
         <SearchBar onSearch={handleSearch} />
         {searchCoinId ? (
-          <CoinTable searchCoins={coins} error={searchError} loading={isSearchFetching} />
+          <CoinTable searchCoins={searchCoins} error={searchError} loading={isSearchFetching} />
         ) : (
           <CoinTable />
         )}

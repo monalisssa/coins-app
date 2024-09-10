@@ -53,8 +53,12 @@ $icon-size: 20px;
   }
 
   & .priceInfo{
-    div{
+    img{
       cursor: pointer;
+    }
+    p{
+      max-width: 200px;
+      text-align: center;
     }
   }
   @media screen and (max-width: 768px)

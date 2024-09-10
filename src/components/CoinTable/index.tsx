@@ -31,12 +31,11 @@ const CoinTable: React.FC<ICoinTableProps> = ({ searchCoins, error: searchError,
   );
 
   const totalRecords = useMemo(() => {
-    return searchCoins && searchCoins.length > 0 ? searchCoins.length : 2000;
+    return searchCoins ? searchCoins.length : 2000;
   }, [searchCoins]);
 
   const dataSource = useMemo(() => {
-    if (searchCoins && searchCoins.length > 0) return filterData(searchCoins);
-    else return filterData(coins);
+    return searchCoins ? filterData(searchCoins) : filterData(coins);
   }, [searchCoins, coins]);
 
   return (
